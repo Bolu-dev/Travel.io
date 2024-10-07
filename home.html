@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/form.css" />
+    <link rel="stylesheet" href="/styles/home.css" />
+    <script src="scripts/functions.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="/scripts/angular.js"></script>
+    <title>Travel.io</title>
+  </head>
+  <body ng-controller="myController">
+    <!-- header -->
+    <header id="main-header">
+      <div class="img">
+        <img src="images/user-32x32.png" alt="" />
+        <h1>Welcome, <span id="userdata-1">User</span></h1>
+      </div>
+      <nav>
+        <ul id="links">
+          <li><a href="">Explore</a></li>
+          <li><a href="">Destination</a></li>
+          <li><a href="">About Us</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <ul id="link-right">
+          <li><a href="index.html" id="orange">▷ Sign out</a></li>
+
+          <select name="more" id="options">
+            <option value="option1">More</option>
+            <option value="option2">Explore</option>
+            <option value="option3">Destination</option>
+            <option value="option3">About Us</option>
+          </select>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- form to input destination -->
+      <section class="form-box">
+        <div>
+          <form id="form-inputs">
+            <div class="img">
+              <img src="images/favicon-32x32.png" alt="" />
+              <h1>Travel.io</h1>
+            </div>
+            <h1>Wagwan where are we travelling to today?</h1>
+            <div>
+              <input
+                type="text"
+                placeholder="Fullname"
+                ng-model="data.name"
+                required
+              />
+              <input type="text" placeholder="From" required />
+              <input
+                type="text"
+                placeholder="Heading To"
+                ng-model="data.destination"
+                required
+              />
+              <select name="more" class="payment">
+                <option value="option1">Ticket Class</option>
+                <option value="option2">First Class</option>
+                <option value="option3">Business Class</option>
+                <option value="option3">Economy Class</option>
+              </select>
+              <select name="more" class="payment">
+                <option value="option1">Payment type</option>
+                <option value="option2">Card</option>
+                <option value="option3">Transfer</option>
+                <option value="option3">Auto Payment</option>
+              </select>
+            </div>
+            <button ng-click="showQR = true" type="submit" class="btn btn-alt">
+              Generate Qr Ticket
+            </button>
+            <button class="btn" ng-click="addData()">
+              Generate new Ticket
+            </button>
+            <p ng-show="showQR">{{message}}</p>
+          </form>
+        </div>
+      </section>
+      <!--QR ticket  -->
+
+      <section ng-show="showQR">
+        <div class="background">
+          <div id="container">
+            <img src="images/image-qr-code.png" alt="" />
+            <aside>
+              <h1>Passenger Name: {{data.name}}</h1>
+              <h1>Destination: {{data.destination}}</h1>
+              <h2>Seat No: A9</h2>
+              <h1>Ticket No: #24AO7798Y</h1>
+              <p>Safe travels, Thank you! for Travelling with us.😉</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

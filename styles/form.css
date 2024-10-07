@@ -1,0 +1,85 @@
+/* mobile view */
+.form-config {
+  position: fixed;
+  left: calc(50% - 11.5rem);
+  width: 20rem;
+  background-color: hsl(0, 0%, 100%);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+/* styling the form */
+.form-config h2 {
+  margin: 1.5rem 0;
+  text-align: center;
+  color: rgb(242, 101, 49);
+}
+
+#form-style {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+#form-style label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+#form-style input {
+  /* display: block; */
+  font: inherit;
+  border: 1px solid rgb(204, 204, 204);
+  width: 15rem;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+}
+
+/* button style */
+.btn {
+  font: inherit;
+  padding: 0.5rem 1.5rem;
+  background-color: rgb(242, 101, 49);
+  border: 1px solid rgb(242, 101, 49);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.btn-alt {
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(242, 101, 49);
+}
+
+.btn:hover {
+  background-color: rgb(244, 68, 4);
+  border-color: rgb(244, 68, 4);
+}
+
+.btn-alt:hover {
+  background-color: rgb(251, 222, 211);
+  border-color: transparent;
+}
+
+/* laptopview of the form */
+@media (min-width: 48rem) {
+  .modal {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
+
+/* backdrop styling */
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
